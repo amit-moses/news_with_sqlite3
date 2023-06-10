@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}News{% endblock %}
+{% block content %}
+
+<div class="card-group">
+    {% for article in news %}
+    <div class="card" style="max-width: 18rem;">
+        <img src="{{ article[3] }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ article[1] }}</h5>
+            <p class="card-text">{{ article[2] }}</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <form method="POST" action="delete/{{ article[0] }}"><input type="submit" value="Delete"
+                class="btn btn-danger">
+            <a href="article/{{ article[0] }}" class="btn btn-primary">Edit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
