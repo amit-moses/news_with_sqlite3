@@ -12,7 +12,8 @@
             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
             <form method="POST" action="delete/{{ article[0] }}"><input type="submit" value="Delete"
                 class="btn btn-danger">
-            <a href="article/{{ article[0] }}" class="btn btn-primary">Edit</a>
+                <a href="article/{{ article[0] }}" class="btn btn-primary">Edit</a>
+            </form>
         </div>
     </div>
     {% endfor %}
